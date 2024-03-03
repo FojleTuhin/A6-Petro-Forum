@@ -28,25 +28,188 @@
 
 <body>
     <header>
-        <section class="content_container flex justify-between mt-12">
-            <div>
-                <h1 class="font-extrabold text-3xl">PeTro</h1>
-            </div>
-            <div>
-                <ul class="flex items-center gap-4">
-                    <li><i class="fa-solid fa-house"></i></li>
-                    <li><i class="fa-solid fa-pen"></i></li>
-                    <li><i class="fa-solid fa-user-plus"></i></li>
-                    <li><i class="fa-regular fa-flag"></i></li>
-                    <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg ml-2 bg-[#797DFC] text-white ">Sign In</button>
-                </ul>
+        <section class="content_container">
+            <!-- nav start from here  -->
+            <nav class=" flex justify-between mt-12">
+                <div>
+                    <h1 class="font-extrabold text-3xl">PeTro</h1>
+                </div>
+                <div>
+                    <div class="flex items-center gap-4 wrapper">
+                        <div class="icon home flex flex-col items-center">
+                            <div class="tooltip">Home</div>
+                            <span class=""><i
+                                    class="fa-solid fa-house h-14 w-16 border rounded-full text-center bg-[#12132d08]"></i></span>
+                        </div>
+                        <div class="icon pen flex flex-col items-center">
+                            <div class="tooltip">Pen</div>
+                            <span><i
+                                    class="fa-solid fa-pen h-14 w-16 border rounded-full text-center bg-[#12132d08]"></i></i></span>
+                        </div>
+                        <div class="icon Add flex flex-col items-center">
+                            <div class="tooltip">Add</div>
+                            <span><i
+                                    class="fa-solid fa-user-plus h-14 w-16 border rounded-full text-center bg-[#12132d08]"></i></span>
+                        </div>
+                        <div class="icon flag flex flex-col items-center">
+                            <div class="tooltip">Flag</div>
+                            <span><i
+                                    class="fa-regular fa-flag h-14 w-16 border rounded-full text-center bg-[#12132d08]"></i></span>
+                        </div>
 
-            </div>
+                        <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg ml-2 bg-[#797DFC] text-white ">Sign
+                            In</button>
 
+                    </div>
+
+                </div>
+            </nav>
         </section>
     </header>
     <main>
+        <section class="content_container">
+            <div
+                class=" rounded-xl bg-[url(images/bgbanner.png)] bg-[#12132D] bg-no-repeat bg-cover p-24 mt-12 flex gap-32">
+                <div>
+                    <h2 class="text-white text-6xl">Welcome to the </h2>
+                    <h2 class="text-white text-6xl"><span class="text-[#797dfc] ">PeTro</span> Forum</h2>
+                    <p class="text-white mt-5 mb-8">Share your favorite opinion and win and wp forum coffee mug!</p>
+                    <input type="text" placeholder="Search here anything"
+                        class="input input-bordered input-secondary w-full max-w-xs" />
+                    <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-md">Search</button>
+                </div>
+                <div class="p-12 bg-white rounded-lg">
+                    <div class="flex gap-14 mb-6">
+                        <p>Registered Users</p>
+                        <p>01</p>
+                    </div>
+                    <div class="flex justify-between mb-6">
+                        <p>Forum</p>
+                        <p>01</p>
+                    </div>
+                    <div class="flex justify-between mb-6">
+                        <p>Topics</p>
+                        <p>01</p>
+                    </div>
+                    <div class="flex justify-between mb-6">
+                        <p>Replies</p>
+                        <p>01</p>
+                    </div>
 
+                </div>
+            </div>
+
+            <!-- let's discuss start from here. -->
+
+            <div class="mt-24 text-center ">
+                <h2 class="font-extrabold text-4xl mb-6">Let's Discuss</h2>
+                <p class="w-3/4 m-auto">Yes, you can run unit tests and view the results directly within the app. The
+                    integrated testing features allow for a streamlined .</p>
+            </div>
+
+            <!-- card start from here. -->
+            <div class="card mt-12 mb-12 ">
+                <div class="flex gap-6">
+                    <div>
+                        <div class="inner-div">
+                            <!-- CARD.BODY -->
+                            <div class="mb-6 p-10 flex gap-6 bg-[#C9D7DD] rounded-2xl ">
+                                <div class="">
+                                    <div class="w-16 h-16 bg-[white] rounded-lg"></div>
+                                    <div class="w-2 h-2 bg-[red] rounded-lg relative bottom-16 left-14"></div>
+                                </div>
+                                <div>
+                                    <div class="flex mb-3">
+                                        <p class="font-medium mr-5"># Coding</p>
+                                        <p class="font-medium">Author : Safia Chowdhury</p>
+                                    </div>
+                                    <div class="">
+                                        <p class="font-bold text-2xl mb-4">10 Kids Unaware of Their Halloween Costume
+                                        </p>
+                                        <p>It’s one thing to subject yourself to ha Halloween costume mishap because,
+                                            hey
+                                            that’s
+                                            your prerogative</p>
+                                        <hr class="mt-4 border-dotted bg-white mb-6">
+                                    </div>
+
+                                    <div class=" flex justify-between">
+                                        <div class="flex items-center gap-4">
+                                            <i class="fa-solid fa-message text-2xl"></i><span>560</span>
+                                            <i class="fa-solid fa-eye text-2xl"></i> <span>1,568</span>
+                                            <i class="fa-solid fa-clock text-2xl"></i><span>5 min</span>
+                                        </div>
+                                        <div>
+                                            <i class="fa-solid fa-message text-2xl"></i>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <!-- second. -->
+                            <div class="p-10 flex gap-6 bg-[#C9D7DD] rounded-2xl ">
+
+                                <div class="">
+                                    <div class="w-16 h-16 bg-[white] rounded-lg"></div>
+                                    <div class="w-2 h-2 bg-[red] rounded-lg relative bottom-16 left-14"></div>
+                                </div>
+                                <div>
+                                    <div class="flex mb-3">
+                                        <p class="font-medium mr-5"># Coding</p>
+                                        <p class="font-medium">Author : Safia Chowdhury</p>
+                                    </div>
+                                    <div class="">
+                                        <p class="font-bold text-2xl mb-4">10 Kids Unaware of Their Halloween Costume
+                                        </p>
+                                        <p>It’s one thing to subject yourself to ha Halloween costume mishap because,
+                                            hey
+                                            that’s
+                                            your prerogative</p>
+                                        <hr class="mt-4 border-dotted bg-white mb-6">
+                                    </div>
+
+                                    <div class=" flex justify-between">
+                                        <div class="flex items-center gap-4">
+                                            <i class="fa-solid fa-message text-2xl"></i><span>560</span>
+                                            <i class="fa-solid fa-eye text-2xl"></i> <span>1,568</span>
+                                            <i class="fa-solid fa-clock text-2xl"></i><span>5 min</span>
+                                        </div>
+                                        <div>
+                                            <i class="fa-solid fa-message text-2xl"></i>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- right side. -->
+                    <div class=" bg-[#12132D0D] p-6 rounded-xl">
+                        <div class="flex justify-between">
+                            <p>Title</p>
+                            <p>Mark as read <span>(1)</span></p>
+                        </div>
+                        <div class="bg-white flex justify-between p-4 gap-2 font-semibold mt-5 rounded-l">
+                            <div>10 Kids Unaware of Their Halloween Costume</div>
+                            <div class="flex items-center gap-3"><i class="fa-solid fa-eye "></i> <span>1,568</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content_container">
+            <div class=" rounded-xl bg-[#12132D] p-20 mt-12 ">
+                <div>
+                    <p class="text-4xl font-extrabold text-white">Join Our Forum</p>
+                    <p class="mt-4">Share your favorite opinion and win and wp forum coffee mug! Yes, you can run unit tests and view the results directly within the app. </p>
+                </div>
+                <div></div>
+            </div>
+
+        </section>
     </main>
     <footer>
 

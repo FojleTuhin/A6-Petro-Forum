@@ -11,7 +11,52 @@ body {
   font-style: normal;
 }
 
-.content_container{
+.content_container {
   width: 90%;
   margin: auto;
+}
+
+.icon {
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.icon span {
+  position: relative;
+  z-index: 2;
+  display: flex;
+}
+
+.icon span i{
+  line-height: 55px;
+}
+
+.tooltip{
+  background: #12132d08;
+  border-radius: 30px;
+  padding:5px 10px;
+}
+
+.icon .tooltip {
+  position: absolute;
+  top: -40px;
+  opacity: 0;
+  pointer-events: none;
+}
+.icon:hover .tooltip{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.icon .tooltip::before{
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  background: #12132d08;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg)
+  
 }
