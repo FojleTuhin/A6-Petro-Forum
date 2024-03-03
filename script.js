@@ -4,17 +4,8 @@ const allPost = async () => {
     const data = await response.json();
 
     const postContainer = document.getElementById('post-container');
-    // console.log(postContainer)
-    for (const item of data.posts) {
-        console.log(item.image)
 
-        // const statusElement = document.getElementById('statusElement');
-        // if (data.isactive) {
-        //     statusElement.style.backgroundColor = '#green'
-        // }
-        // else {
-        //     statusElement.style.backgroundColor = '#red'
-        // }
+    for (const item of data.posts) {
 
 
         let div = document.createElement("div");
@@ -56,7 +47,11 @@ const allPost = async () => {
 
 
 }
+
+let count=0;
 function clickMe() {
+    
+
     const addingPost = document.getElementById('adding-post')
     const div = document.createElement('div');
     div.innerHTML = `
@@ -69,6 +64,56 @@ function clickMe() {
         `
 
     addingPost.appendChild(div)
+
+    count++;
+    document.getElementById('count').innerText=count;
 }
 
 allPost();
+
+
+const latestPost = async () => {
+    const response = await fetch('https://openapi.programming-hero.com/api/retro-forum/latest-posts');
+
+    const data = await response.json();
+
+    const card = document.getElementById('card')
+
+    for (const item of data) {
+        let div2 = document.createElement("div");
+        div2.innerHTML = `
+        <div class="mt-12 flex mb-24">
+                    <div class="card w-96 bg-base-100 shadow-xl">
+                        <figure class="px-10 pt-10">
+                            <img src="${item.cover_image}" alt="Shoes"
+                                class="rounded-xl" />
+                        </figure>
+                        <div class="card-body ">
+                            <div class="flex gap-4 items-center">
+                                <i class="fa-solid fa-calendar-days"></i>
+                                <p>${item.author.posted_date}</p>
+                            </div>
+                            <p>${item.title}</p>
+                            <p>${item.description}</p>
+
+                            <div class="flex">
+                                <div class="bg-cover w-14 h-14 rounded-full">
+                                    <img src="${item.profile_image}" alt="">
+    
+                                </div>
+                                <div>
+                                    <p class="font-bold">${item.author.name}</p>
+                                    <p>${item.author.designation}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+    
+                </div>
+        `
+        card.appendChild(div2)
+    }
+}
+
+latestPost();
