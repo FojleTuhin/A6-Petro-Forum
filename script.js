@@ -7,13 +7,16 @@ const allPost = async () => {
 
     for (const item of data.posts) {
 
-
+        let Active=" bg-[red]"
+        if(item.isActive){
+            Active=`bg-[green]`
+        }
         let div = document.createElement("div");
         div.innerHTML = `
                         <div class="mb-6 p-10 flex gap-6 bg-[#C9D7DD] rounded-2xl">
                                  <div>
                                     <div class="w-16 h-16 bg-[white] rounded-lg bg-cover"><img src="${item.image}" alt=""></div>
-                                    <div class="statusElement w-2 h-2 bg-[red] rounded-lg relative bottom-16 left-14"> </div>
+                                    <div class=" w-2 h-2 ${Active} rounded-lg relative bottom-16 left-14"> </div>
                                     
                                 </div>
                                 <div>
@@ -79,7 +82,14 @@ const latestPost = async () => {
 
     const card = document.getElementById('card')
 
+    
+
     for (const item of data) {
+
+        
+
+        
+
         let div2 = document.createElement("div");
         div2.innerHTML = `
         <div class="mt-12 flex mb-24">
