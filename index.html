@@ -28,13 +28,14 @@
 
 <body>
     <header>
+        
         <section class="content_container">
             <!-- nav start from here  -->
             <nav class=" flex justify-between mt-12">
                 <div>
                     <h1 class="font-extrabold text-3xl">PeTro</h1>
                 </div>
-                <div>
+                <div class="hidden md:block">
                     <div class="flex items-center gap-4 wrapper">
                         <div class="icon home flex flex-col items-center">
                             <div class="tooltip">Home</div>
@@ -69,14 +70,15 @@
     <main>
         <section class="content_container">
             <div
-                class=" rounded-xl bg-[url(images/bgbanner.png)] bg-[#12132D] bg-no-repeat bg-cover p-24 mt-12 flex gap-32">
+                class=" rounded-xl bg-[url(images/bgbanner.png)] bg-[#12132D] bg-no-repeat bg-cover p-6 mt-4 md:p-24 md:mt-12 md:flex md:gap-32">
                 <div>
                     <h2 class="text-white text-6xl">Welcome to the </h2>
                     <h2 class="text-white text-6xl"><span class="text-[#797dfc] ">PeTro</span> Forum</h2>
                     <p class="text-white mt-5 mb-8">Share your favorite opinion and win and wp forum coffee mug!</p>
                     <input id="search-field" type="text" placeholder="Search here anything"
                         class="input input-bordered input-secondary w-full max-w-xs" />
-                    <button onclick="handleSearch()" class="btn btn-xs sm:btn-sm md:btn-md lg:btn-md">Search</button>
+                    <button onclick="handleSearch()"
+                        class="btn btn-xs sm:btn-sm md:btn-md lg:btn-md mb-4">Search</button>
                 </div>
                 <div class="p-12 bg-white rounded-lg">
                     <div class="flex gap-14 mb-6">
@@ -99,8 +101,8 @@
                 </div>
             </div>
 
-             <!-- loader or spinner -->
-             <div class="text-center my-40 hidden" id="loading-spinner">
+            <!-- loader or spinner -->
+            <div class="text-center my-40 hidden" id="loading-spinner">
                 <span class="loading loading-bars loading-xs"></span>
                 <span class="loading loading-bars loading-sm"></span>
                 <span class="loading loading-bars loading-md"></span>
@@ -117,7 +119,7 @@
 
             <!-- card start from here. -->
             <div class="card mt-12 mb-12 ">
-                <div class="flex gap-6">
+                <div class="md:flex gap-6">
                     <div>
                         <div id="post-container">
                             <!-- CARD.BODY -->
@@ -126,11 +128,11 @@
                         </div>
                     </div>
                     <!-- right side. -->
-                    <div class=" bg-[#12132D0D] p-6 rounded-xl">
+                    <div class=" bg-[#12132D0D] p-6 rounded-xl md:w-2/5 w-full">
                         <div class="flex justify-between">
                             <p>Title</p>
                             <div class="flex items-center gap-2"><i class="fa-solid fa-check"></i>
-                                <p>Mark as read <span id="count">(1)</span></p>
+                                <p>Mark as read <span id="count">(0)</span></p>
                             </div>
                         </div>
                         <div class="bg-white flex flex-col justify-between p-4 font-semibold mb-4 mt-5 rounded-l"
@@ -143,7 +145,7 @@
         </section>
 
         <section class="content_container">
-            <div class=" rounded-xl bg-[#12132D] p-20 mt-12 flex ">
+            <div class=" rounded-xl bg-[#12132D] p-20 mt-12 md:flex ">
                 <div>
                     <p class="text-4xl font-extrabold text-white">Join Our Forum</p>
                     <p class="mt-4 text-white mb-8">Share your favorite opinion and win and wp forum coffee mug! Yes,
@@ -166,11 +168,11 @@
 
 
             <!-- card section, -->
-            <div id="card" class="flex gap-3">
+            <div id="card" class="md:flex gap-3">
 
             </div>
 
-           
+
 
 
         </section>
