@@ -1,9 +1,20 @@
+const loadPhone =async(search)=>{
+    const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${search}`);
+    const data =await res.json();
+    const phones =data.posts
+    // console.log(phones)
+    displayPhone(phones);
+}
+
+
 const allPost = async () => {
-    const response = await fetch('https://openapi.programming-hero.com/api/retro-forum/posts');
+    const response = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts`);
 
     const data = await response.json();
 
     const postContainer = document.getElementById('post-container');
+
+   
 
     for (const item of data.posts) {
 
@@ -72,9 +83,6 @@ function clickMe() {
     document.getElementById('count').innerText=count;
 }
 
-allPost();
-
-
 const latestPost = async () => {
     const response = await fetch('https://openapi.programming-hero.com/api/retro-forum/latest-posts');
 
@@ -126,4 +134,63 @@ const latestPost = async () => {
     }
 }
 
+
+// handle search button 
+
+function handleSearch(){
+    const searchField= document.getElementById('search-field');
+    searchText=searchField.value ;
+    console.log(searchText)
+    loadPhone(searchText);
+    allPost(posts)
+}
+
+const displayPhone= phones=>{
+    const postContainer = document.getElementById('post-container');
+
+    
+    postContainer.textContent=""
+    for (const item of phones) {
+
+        let Active=" bg-[red]"
+        if(item.isActive){
+            Active=`bg-[green]`
+        }
+        let div = document.createElement("div");
+        div.innerHTML = `
+                        <div class="mb-6 p-10 flex gap-6 bg-[#C9D7DD] rounded-2xl">
+                                 <div>
+                                    <div class="w-16 h-16 bg-[white] rounded-lg bg-cover"><img src="${item.image}" alt=""></div>
+                                    <div class=" w-2 h-2 ${Active} rounded-lg relative bottom-16 left-14"> </div>
+                                    
+                                </div>
+                                <div>
+                                    <div class="flex mb-3">
+                                        <p class="font-medium mr-7"># ${item.category}</p>
+                                        <p class="font-medium">Author : ${item.author.name}</p>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-2xl mb-4">${item.title}
+                                        </p>
+                                        <p>${item.description}</p>
+                                        <hr class="mt-4 border-dotted w-full bg-white mb-6">
+                                    </div>
+
+                                    <div class=" flex justify-between">
+                                        <div class="flex items-center gap-4">
+                                            <i class="fa-solid fa-message text-2xl"></i><span>${item.comment_count}</span>
+                                            <i class="fa-solid fa-eye text-2xl"></i> <span>${item.view_count}</span>
+                                            <i class="fa-solid fa-clock text-2xl"></i><span>${item.posted_time} min</span>
+                                        </div>
+                                        <div onclick="clickMe()">
+                                            <i class="fa-solid fa-message text-2xl"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+        `
+        postContainer.appendChild(div);
+    }
+}
+allPost();
 latestPost();
