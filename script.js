@@ -138,6 +138,8 @@ const latestPost = async () => {
 // handle search button 
 
 function handleSearch(){
+
+    toogleLoadingSpinner()
     const searchField= document.getElementById('search-field');
     searchText=searchField.value ;
     console.log(searchText)
@@ -192,5 +194,19 @@ const displayPhone= phones=>{
         postContainer.appendChild(div);
     }
 }
+
+const toogleLoadingSpinner=()=>{
+    const loadingSpinner=document.getElementById('loading-spinner');
+
+    loadingSpinner.classList.remove('hidden');
+    setTimeout(() => {
+        loadingSpinner.classList.add('hidden');
+    }, (2000));
+    
+}
+
+
+
+
 allPost();
 latestPost();
