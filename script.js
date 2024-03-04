@@ -90,13 +90,19 @@ const latestPost = async () => {
 
     const card = document.getElementById('card')
 
-    
 
     for (const item of data) {
 
-        
+        let date=" No Publish Date"
+        if(item.author.posted_date){
+            date=item.author.posted_date;
+        }
 
-        
+        let designation="Unknown"
+        if(item.author.designation){
+            designation=item.author.designation;
+        }
+       
 
         let div2 = document.createElement("div");
         div2.innerHTML = `
@@ -109,19 +115,19 @@ const latestPost = async () => {
                         <div class="card-body ">
                             <div class="flex gap-4 items-center">
                                 <i class="fa-solid fa-calendar-days"></i>
-                                <p>${item.author.posted_date}</p>
+                                <p>${date}</p>
                             </div>
                             <p>${item.title}</p>
                             <p>${item.description}</p>
 
-                            <div class="flex">
+                            <div class="flex gap-3 mt-3">
                                 <div class="bg-cover w-14 h-14 rounded-full">
-                                    <img src="${item.profile_image}" alt="">
+                                    <img class="rounded-full" src="${item.profile_image}" alt="">
     
                                 </div>
                                 <div>
                                     <p class="font-bold">${item.author.name}</p>
-                                    <p>${item.author.designation}</p>
+                                    <p>${designation}</p>
                                 </div>
                             </div>
                         </div>
